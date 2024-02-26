@@ -1,0 +1,47 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.sky {
+    background: linear-gradient(#87CEEB, #4682B4);
+    height: 100%;
+    overflow: hidden;
+}
+
+.clouds {
+    background-image: url('clouds.png'); /* Add cloud image */
+    width: 100%;
+    height: 1500px; /* Adjust height as needed */
+    position: absolute;
+    top: -200px; /* Adjust top position for parallax effect */
+    animation: moveClouds 60s linear infinite; /* Adjust animation duration */
+    animation: moveClouds 60s linear infinite alternate; /* Adjust animation duration */
+    transform-origin: center; /* Make sure clouds sway around their center */
+}
+
+.balloon {
+    background-image: url('balloon.png'); /* Add balloon image */
+    width: 200px; /* Adjust balloon size */
+    height: 300px; /* Adjust balloon size */
+    position: absolute;
+    top: 50%;
+    left: -200px; /* Start position of the balloon */
+}
+
+@keyframes moveClouds {
+    from {
+        transform: translateY(-50px) translateX(-5px);
+    }
+    to {
+        transform: translateY(50px) translateX(5px);
+    }}
